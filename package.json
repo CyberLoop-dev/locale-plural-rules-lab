@@ -1,0 +1,8 @@
+{
+  "name": "locale-plural-rules-lab",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Interactive Intl.PluralRules locale explorer",
+  "scripts": { "start": "node server.js" },
+  "engines": { "node": ">=18" }
+}

@@ -1,0 +1,17 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#071522"><title>Locale Plural Rules Lab</title>
+<style>
+:root{color-scheme:dark;--bg:#071522;--panel:#10283a;--line:#25465b;--text:#ecfaff;--muted:#a4c1d1;--cyan:#67e8f9;--blue:#7dd3fc;--green:#86efac}
+*{box-sizing:border-box}body{margin:0;background:radial-gradient(circle at 90% 0,#12435a,transparent 36%),var(--bg);color:var(--text);font:15px/1.5 system-ui,sans-serif}main{max-width:1050px;margin:auto;padding:36px 20px 60px}h1{font-size:clamp(2rem,5vw,3.2rem);letter-spacing:-.05em;margin:0}p{color:var(--muted)}
+.panel{background:linear-gradient(145deg,#123047,#0d2030);border:1px solid var(--line);border-radius:18px;padding:18px;margin-top:18px}.controls{display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px}.field{display:grid;gap:6px;color:var(--muted);font-size:.85rem}input,select{width:100%;padding:11px;border-radius:10px;background:#081a29;border:1px solid var(--line);color:var(--text)}button{padding:11px 16px;border-radius:10px;border:0;background:var(--cyan);color:#05202a;font-weight:800;cursor:pointer}
+.result{display:grid;grid-template-columns:1fr 2fr;gap:14px;margin-top:16px}.hero{display:flex;flex-direction:column;justify-content:center;align-items:center;min-height:180px;background:#081b2a;border:1px solid var(--line);border-radius:14px}.hero strong{font-size:3.5rem;color:var(--cyan)}.hero span{color:var(--muted)}.categories{display:flex;flex-wrap:wrap;gap:8px;margin:12px 0}.chip{border:1px solid #2b7186;color:#bff7ff;background:#0b3445;border-radius:99px;padding:5px 10px;font-size:.82rem}
+table{border-collapse:collapse;width:100%;font-variant-numeric:tabular-nums}th,td{text-align:left;padding:9px;border-bottom:1px solid var(--line)}th{color:var(--muted);font-size:.82rem}td:last-child{color:var(--green);font-weight:700}.error{color:#fda4af;min-height:1.5em}
+@media(max-width:760px){.controls,.result{grid-template-columns:1fr}}
+</style></head><body><main>
+<h1>Locale <span style="color:var(--cyan)">Plural Rules</span> Lab</h1><p>Explore the plural categories selected by the browser's internationalization engine.</p>
+<section class="panel"><div class="controls">
+<label class="field">Locale tag<input id="locale" value="en" spellcheck="false" placeholder="en, ar, ru, fr-CA"></label>
+<label class="field">Rule type<select id="type"><option value="cardinal">Cardinal (how many)</option><option value="ordinal">Ordinal (position)</option></select></label>
+<label class="field">Custom number<input id="number" type="number" step="any" value="1"></label>
+</div><div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:14px"><button id="check">Update rules</button><span class="error" id="error" role="status"></span></div>
+<div class="result"><div class="hero"><strong id="category">one</strong><span>Selected category</span></div><div><h2 style="font-size:1rem;margin:4px 0">Resolved categories</h2><div class="categories" id="categories"></div><h2 style="font-size:1rem;margin:12px 0 5px">Sample numbers</h2><table><thead><tr><th>Number</th><th>Category</th></tr></thead><tbody id="samples"></tbody></table></div></div>
+</section></main><script src="/app.js"></script></body></html>
